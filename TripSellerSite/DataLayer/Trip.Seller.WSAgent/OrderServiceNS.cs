@@ -1,5 +1,5 @@
 /* Options:
-Date: 2017-09-27 03:07:13
+Date: 2017-09-27 19:17:27
 Version: 4.00
 Tip: To override a DTO option, remove "//" prefix before updating
 BaseUrl: http://localhost:41054
@@ -63,33 +63,15 @@ namespace Trip.Order.DTO
         public virtual int OrderID { get; set; }
 
         ///<summary>
-        ///订单状态ID：0表示未审核，1表示审核通过，2表示审核未通过
+        ///订单状态
         ///</summary>
-        [ApiMember(Name="OrderStateID", Description="订单状态ID：0表示未审核，1表示审核通过，2表示审核未通过")]
+        [ApiMember(Name="OrderStateID", Description="订单状态")]
         public virtual int OrderStateID { get; set; }
 
         ///<summary>
-        ///订单金额
+        ///会员编号
         ///</summary>
-        [ApiMember(Name="Amount", Description="订单金额")]
-        public virtual decimal Amount { get; set; }
-
-        ///<summary>
-        ///产品ID号
-        ///</summary>
-        [ApiMember(Name="ProductID", Description="产品ID号")]
-        public virtual int ProductID { get; set; }
-
-        ///<summary>
-        ///产品名称
-        ///</summary>
-        [ApiMember(Name="ProductName", Description="产品名称")]
-        public virtual string PrductName { get; set; }
-
-        ///<summary>
-        ///会员ID号
-        ///</summary>
-        [ApiMember(Name="MemberID", Description="会员ID号")]
+        [ApiMember(Name="MemberID", Description="会员编号")]
         public virtual int MemberID { get; set; }
 
         ///<summary>
@@ -97,12 +79,6 @@ namespace Trip.Order.DTO
         ///</summary>
         [ApiMember(Name="MemberName", Description="会员名")]
         public virtual string MemberName { get; set; }
-
-        ///<summary>
-        ///创建记录日期时间
-        ///</summary>
-        [ApiMember(Name="OrderCreatedTime", Description="创建记录日期时间")]
-        public virtual DateTime OrderCreatedTime { get; set; }
     }
 
     public partial class SearchOrderResponse
@@ -115,9 +91,9 @@ namespace Trip.Order.DTO
         public virtual int OrderID { get; set; }
 
         ///<summary>
-        ///订单状态ID：0表示未审核，1表示审核通过，2表示审核未通过
+        ///订单状态
         ///</summary>
-        [ApiMember(Name="OrderStateID", Description="订单状态ID：0表示未审核，1表示审核通过，2表示审核未通过")]
+        [ApiMember(Name="OrderStateID", Description="订单状态")]
         public virtual int OrderStateID { get; set; }
 
         ///<summary>
@@ -127,9 +103,9 @@ namespace Trip.Order.DTO
         public virtual decimal Amount { get; set; }
 
         ///<summary>
-        ///产品ID号
+        ///产品编号
         ///</summary>
-        [ApiMember(Name="ProductID", Description="产品ID号")]
+        [ApiMember(Name="ProductID", Description="产品编号")]
         public virtual int ProductID { get; set; }
 
         ///<summary>
@@ -139,9 +115,9 @@ namespace Trip.Order.DTO
         public virtual string PrductName { get; set; }
 
         ///<summary>
-        ///会员ID号
+        ///会员编号
         ///</summary>
-        [ApiMember(Name="MemberID", Description="会员ID号")]
+        [ApiMember(Name="MemberID", Description="会员编号")]
         public virtual int MemberID { get; set; }
 
         ///<summary>
@@ -151,9 +127,9 @@ namespace Trip.Order.DTO
         public virtual string MemberName { get; set; }
 
         ///<summary>
-        ///创建记录日期时间
+        ///下单时间
         ///</summary>
-        [ApiMember(Name="OrderCreatedTime", Description="创建记录日期时间")]
+        [ApiMember(Name="OrderCreatedTime", Description="下单时间")]
         public virtual DateTime OrderCreatedTime { get; set; }
     }
 }
