@@ -1,0 +1,21 @@
+﻿@using Newtonsoft.Json;
+@using Trip.Seller.ViewModel;
+@using Trip.Seller.Utility;
+
+@model SearchOrderOutput
+
+@{
+    string resultJSON = string.Empty;
+    if (Model != null)
+    {
+        resultJSON = JsonConvert.SerializeObject(Model);
+    }        
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<br />
+@Html.TextAreaFor(m => resultJSON, new { rows = 6, style = "width:600px;" })
+@section Scripts {
+    <script src="~/js/order.js?v=@AppSetting.StaticFileVersion"></script>
+}

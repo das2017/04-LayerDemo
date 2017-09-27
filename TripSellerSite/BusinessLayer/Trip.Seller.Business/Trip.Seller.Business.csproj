@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{01A00A83-754B-4B6E-B61F-11BB6FCC8CD6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Trip.Seller.Business</RootNamespace>
+    <AssemblyName>Trip.Seller.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FxCommon">
+      <HintPath>..\..\packages\FxCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="MSA">
+      <HintPath>..\..\packages\MSA.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OrderLogic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CommonLayer\Trip.Seller.Utility\Trip.Seller.Utility.csproj">
+      <Project>{c8a03bff-fcdd-481c-8cb9-4671ed5c8466}</Project>
+      <Name>Trip.Seller.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataLayer\Trip.Seller.MSSQLDB\Trip.Seller.MSSQLDB.csproj">
+      <Project>{6e35b53a-d4c1-4453-a625-c6e385ec9e47}</Project>
+      <Name>Trip.Seller.MSSQLDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataLayer\Trip.Seller.WSAgent\Trip.Seller.WSAgent.csproj">
+      <Project>{3294905f-4f05-4fda-bbb5-4352884ccc64}</Project>
+      <Name>Trip.Seller.WSAgent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntityLayer\Trip.Seller.Entity\Trip.Seller.Entity.csproj">
+      <Project>{721345af-2c3d-46d5-bc36-52defab70f2e}</Project>
+      <Name>Trip.Seller.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntityLayer\Trip.Seller.ViewModel\Trip.Seller.ViewModel.csproj">
+      <Project>{7450e8b5-0c07-45a1-a3b1-f554d6398940}</Project>
+      <Name>Trip.Seller.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
