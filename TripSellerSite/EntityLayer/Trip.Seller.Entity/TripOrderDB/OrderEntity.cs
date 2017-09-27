@@ -27,7 +27,7 @@ namespace Trip.Seller.Entity
         public decimal Amount { get; set; }
 
         /// <summary>
-        /// 产品ID号
+        /// 产品编号
         /// </summary>
         public int ProductID { get; set; }
 
@@ -37,7 +37,7 @@ namespace Trip.Seller.Entity
         public string ProductName { get; set; }
 
         /// <summary>
-        /// 会员ID号
+        /// 会员编号
         /// </summary>
         public int MemberID { get; set; }
 
@@ -47,7 +47,7 @@ namespace Trip.Seller.Entity
         public string MemberName { get; set; }
 
         /// <summary>
-        /// 创建记录日期时间
+        /// 下单时间
         /// </summary>
         public DateTime OrderCreatedTime { get; set; }
     }

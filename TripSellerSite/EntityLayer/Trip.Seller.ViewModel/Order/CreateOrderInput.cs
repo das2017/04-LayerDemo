@@ -22,7 +22,7 @@ namespace Trip.Seller.ViewModel
         public decimal Amount { get; set; }
 
         /// <summary>
-        /// 产品ID号
+        /// 产品编号
         /// </summary>
         public int ProductID { get; set; }
 
@@ -32,7 +32,7 @@ namespace Trip.Seller.ViewModel
         public string PrductName { get; set; }
 
         /// <summary>
-        /// 会员ID号
+        /// 会员编号
         /// </summary>
         public int MemberID { get; set; }
 
@@ -42,7 +42,7 @@ namespace Trip.Seller.ViewModel
         public string MemberName { get; set; }
 
         /// <summary>
-        /// 下单日期
+        /// 下单时间
         /// </summary>
         public DateTime OrderCreatedTime { get; set; }
     }
