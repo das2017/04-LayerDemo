@@ -13,8 +13,8 @@ namespace Trip.Order.Utility
 
         public AppException(AppErrorEnum errorCode)
         {
-            Code = (int)errorCode;            
-            Message = EnumHelper.GetDisplay(errorCode);
+            Code = (int)errorCode;
+            Message = EnumHelper.GetEnumDescription(errorCode);
         }
     }
 }

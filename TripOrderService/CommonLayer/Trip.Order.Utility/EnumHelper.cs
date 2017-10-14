@@ -4,36 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Reflection;
+using System.ComponentModel;
+
 namespace Trip.Order.Utility
 {
     public class EnumHelper
     {
-        private static readonly Dictionary<string, string> _Displays = new Dictionary<string, string>();
-
         /// <summary>
-        /// 获取枚举的Display
+        /// 获取枚举类子项描述信息
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="formatter"></param>
-        /// <returns></returns>
-        public static string GetDisplay(Enum value, params string[] formatter)
+        /// <param name="enumSubitem">枚举类子项</param>        
+        public static string GetEnumDescription(Enum enumSubitem)
         {
-            var type = value.GetType();
-            var name = Enum.GetName(type, value);
-            var display = string.Empty;
-            if (_Displays.TryGetValue(name, out display) == false)
+            string strValue = enumSubitem.ToString();
+            FieldInfo fieldinfo = enumSubitem.GetType().GetField(strValue);
+            Object[] objs = fieldinfo.GetCustomAttributes(typeof(DescriptionAttribute), false);
+            if (objs == null || objs.Length == 0)
             {
-                var field = type.GetField(name);
-                if (field == null) { display = name; }
-                else
-                {
-                    var attribute = Attribute.GetCustomAttribute(field, typeof(AppErrorEnumAttribute)) as AppErrorEnumAttribute;
-                    display = attribute == null ? name : attribute.Display;
-                }
-                _Displays.Add(name, display);
+                return strValue;
             }
 
-            return (formatter == null || formatter.Length == 0) ? display : string.Format(display, formatter);
+            DescriptionAttribute da = (DescriptionAttribute)objs[0];
+            return da.Description;
         }
     }
 }

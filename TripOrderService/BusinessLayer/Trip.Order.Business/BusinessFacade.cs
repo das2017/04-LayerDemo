@@ -33,7 +33,7 @@ namespace Trip.Order.Business
             catch
             {
                 response.ErrorCode = (int)AppErrorEnum.InternalServerError;
-                response.ErrorMsg = EnumHelper.GetDisplay(AppErrorEnum.InternalServerError);
+                response.ErrorMsg = EnumHelper.GetEnumDescription(AppErrorEnum.InternalServerError);
             }
             return response;
         }
