@@ -22,7 +22,8 @@ namespace Trip.Seller.Business
         } 
         public static SearchOrderOutput SearchOrder(int orderId)
         {
-            OrderEntity result = TripOrderDBQuery.SearchOrder(orderId);
+            //OrderEntity result = TripOrderDBQuery.SearchOrder(orderId);
+            OrderEntity result = TripOrderDBFacade.SearchOrder(orderId);
             return ConvertHelper<OrderEntity, SearchOrderOutput>.Convert(result);
         }
     }
